@@ -8,10 +8,15 @@ SRCS		= get_next_line_utils.c
 
 OBJS		= $(SRCS:.c=.o)
 
-NAME		= libft.a
+NAME		= libftprintf.a
 
-$(NAME)		: all
+$(NAME)		: all libft.a
 				ar rs $(NAME) $(OBJS) $(OBJS_bonus)
+
+libft.a		:
+				$(MAKE) -C libft libft.a
+				mv libft/libft.a .
+				mv libft/libft.h .
 
 all			: $(OBJS)
 

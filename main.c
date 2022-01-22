@@ -1,7 +1,10 @@
-int	ft_printf(const char *, ...)
-{}
+#include "libft.h"
 
-int main (int argc, char *argv)
+int main (void)
 {
+	ft_putstr_fd("Yo!", 1);
+
 	
+
+	return (0);
 }
