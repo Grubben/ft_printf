@@ -2,8 +2,10 @@
 
 int main (void)
 {
-	ft_putstr_fd("Yo!", 1);
+	int count;
 
+	count = printf("Hey%d\n", 254);
+	printf("%d\n", count);
 	
 
 	return (0);

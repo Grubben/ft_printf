@@ -14,13 +14,16 @@ const char* const the_string : I cannot change the char to which the_string poin
 		    -The first argument is a variable declared as va_list type, which is an argument pointer variable.
 			-The second argument is the last fixed argument accepted by the variadic function.
 	This macro initialises the argument pointer variable pargs to point to the first optional argument accepted by the variadic function.
+
 -va_arg(va_list pargs, type)
 	This macro accepts two arguments.
 			-This first argument is same as the first argument in va_start() macro.
 			-The second argument specified the expected data type pointed by pargs.
 	This function returns the value of the argument pointed by pargs, and also update the pargs to point to the next argument in the list.
+
 -va_end(va_list pargs)
 	This macro ends the use of pargs. According to this manual page, after calling va_end(pargs), further va_arg calls with pargs may not work. However, in GNU C library, va_end does nothing, so you may not necessary to use it except for portability reason.
+
 ### Implementation
 They need some sort of limit for it to stop. Usually it's the first (defined) argument.
 In this case, I propose it not have a limit and va_arg be called only and every time it's necessary
@@ -30,8 +33,9 @@ if (is_replaceable())
 	va_arg(...);
 ```
 
+
 ## Strat ( a mix between python and C )
-```
+```C
 func:	is_replace(char	*str)
 	if (*str == '%')
 	{
@@ -71,9 +75,9 @@ func:	ft_printf(const char *format)
 	{
 		if (is_replace(format))
 		{
+			CONVERT(format);
 			# this is to skip over those 2 chars when done
 			# Could be done in CONVERT 
-			CONVERT(format);
 			format = format + 2;
 		}
 

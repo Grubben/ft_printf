@@ -11,12 +11,13 @@ OBJS		= $(SRCS:.c=.o)
 NAME		= libftprintf.a
 
 $(NAME)		: all libft.a
-				ar rs $(NAME) $(OBJS) $(OBJS_bonus)
+				ar rcs $(NAME) $(OBJS) $(OBJS_bonus)
+				ranlib $(NAME)
 
 libft.a		:
 				$(MAKE) -C libft libft.a
-				mv libft/libft.a .
-				mv libft/libft.h .
+				cp libft/libft.a .
+				cp libft/libft.h .
 
 all			: $(OBJS)
 
@@ -24,7 +25,8 @@ clean		:
 				$(RM) $(OBJS)
 
 fclean		: clean
-				$(RM) *.out* $(lib) *.gch
+				$(RM) *.out* $(NAME) *.gch
+				$(RM) *.a libft.h
 
 re			: fclean $(NAME)
 
