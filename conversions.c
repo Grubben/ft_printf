@@ -1,4 +1,5 @@
 #include "libft.h"
+#include "ft_putnbr_base.c"
 #include <stdarg.h>
 #include <unistd.h>
 
@@ -12,13 +13,14 @@ int	toChar(va_list pargs)
 	return (1);
 }
 
-int	toPointer(va_list pargs)
+int	toPointer(char *ptr)
 {
-	char	*ptr;
+	//int		new;
+	int		count;
 
-	ptr = va_arg(pargs, char*);
-
-	return (9);
+	//new = ft_atoi(ptr);
+	count = ft_putnbr_base(ptr, "0123456789ABCDEF");
+	return (count);
 }
 
 
@@ -28,5 +30,6 @@ int main(void)
 	char	*ptr;
 
 	ptr = "hello";
+	printf("%d\n", toPointer(ptr));
 	printf("%p\n", ptr);
 }

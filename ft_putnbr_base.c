@@ -36,7 +36,22 @@ int	base_check(char *base)
 	return (1);
 }
 
-void	ft_putnbr_base(int nbr, char *base)
+size_t	num_len(size_t unbr)
+{
+	size_t	count;
+	
+	if (unbr < 10)
+		return (1);
+	count = 0;
+	while (unbr != 0)
+	{
+		count++;
+		unbr = unbr / 10;
+	}
+}
+
+
+int	ft_putnbr_base(int nbr, char *base)
 /* Converts decimal int to numerical base `base`
 */
 {
@@ -63,12 +78,15 @@ void	ft_putnbr_base(int nbr, char *base)
 			--i;
 		}
 		ft_putstr(&ar_num[i + 1]);
+		return (ft_strlen(&ar_num[i + 1]));
 	}
+	return (0);
 }
-
+/*
 #include <stdio.h>
 int main()
 {
 	ft_putnbr_base(232, "0123456789ABCDEF");
 	return 0;
 }
+*/
