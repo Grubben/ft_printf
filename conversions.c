@@ -24,7 +24,7 @@ int	toPointer(char *ptr)
 }
 
 
-
+/*
 int main(void)
 {
 	char	*ptr;
@@ -33,3 +33,4 @@ int main(void)
 	printf("%d\n", toPointer(ptr));
 	printf("%p\n", ptr);
 }
+*/

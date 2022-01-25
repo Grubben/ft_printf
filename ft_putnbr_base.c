@@ -48,6 +48,7 @@ size_t	num_len(size_t unbr)
 		count++;
 		unbr = unbr / 10;
 	}
+	return (count);
 }
 
 
@@ -82,11 +83,11 @@ int	ft_putnbr_base(int nbr, char *base)
 	}
 	return (0);
 }
-/*
+///*
 #include <stdio.h>
 int main()
 {
-	ft_putnbr_base(232, "0123456789ABCDEF");
+	printf("%zu\n", num_len(021));
 	return 0;
 }
-*/
+//*/
