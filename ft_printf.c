@@ -47,14 +47,16 @@ int	is_replace(const char *str)
 
 int	convert(const char *str, va_list pargs)
 {
-	int	count;
+	int		count;
+	char	*ptr;
 
 	count = 0;
 	if (*(str + 1) == 'c')
 		count = toChar(pargs);
 	/*
+	ptr = va_arg(pargs, char*);
 	if (*(str + 1) == 's')
-		toString();
+		toString(ptr);
 	if (*(str + 1) == 'p')
 		toPointer();
 	if (*(str + 1) == 'd')
