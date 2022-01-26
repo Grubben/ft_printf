@@ -31,4 +31,4 @@ fclean		: clean
 re			: fclean $(NAME)
 
 
-.PHONY		: $(NAME) all bonus clean fclean re 
+.PHONY		: $(NAME) all bonus clean fclean re libft.a

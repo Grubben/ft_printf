@@ -52,17 +52,19 @@ size_t	num_len(size_t unbr)
 }
 
 
-int	ft_putnbr_base(int nbr, char *base)
+int	ft_putnbr_base(ssize_t nbr, char *base)
 /* Converts decimal int to numerical base `base`
 */
 {
-	unsigned int	number;
-	char			ar_num[33];
+	size_t			number;
+	char			*ar_num;
+	size_t			size;
 	int				i;
 
 	if (base_check(base) == 1)
 	{
 		number = nbr;
+		size = num_len(number);
 		if (nbr < 0)
 		{
 			ft_putstr("-");
@@ -70,8 +72,9 @@ int	ft_putnbr_base(int nbr, char *base)
 		}
 		if (number == 0)
 			write(1, &base[0], 1);
-		ar_num[32] = '\0';
-		i = 31;
+		ar_num = malloc((size + 1) * sizeof(int));
+		ar_num[size * sizeof(int)] = '\0';
+		i = size - 1;
 		while (number != 0 && i > -1)
 		{
 			ar_num[i] = base[number % ft_strlen(base)];
@@ -83,11 +86,11 @@ int	ft_putnbr_base(int nbr, char *base)
 	}
 	return (0);
 }
-///*
+/*
 #include <stdio.h>
 int main()
 {
-	printf("%zu\n", num_len(021));
+	ft_putnbr_base(0, "0123456789");
 	return 0;
 }
-//*/
+*/
