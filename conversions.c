@@ -18,19 +18,23 @@ int	toPointer(char *ptr)
 	//int		new;
 	int		count;
 
-	//new = ft_atoi(ptr);
-	count = ft_putnbr_base(ptr, "0123456789ABCDEF");
+	ft_putstr_fd("0x", 1);
+	count = 2;
+	count += ft_putnbr_base((size_t)ptr, "0123456789abcdef");
 	return (count);
 }
 
 
-/*
+///*
 int main(void)
 {
-	char	*ptr;
+	size_t	count;
 
+
+	char	*ptr;
 	ptr = "hello";
-	printf("%d\n", toPointer(ptr));
-	printf("%p\n", ptr);
+	printf("\n%d\n", toPointer(ptr));
+	count = printf("%p", ptr);
+	printf("\n%zu\n", count);
 }
-*/
+//*/

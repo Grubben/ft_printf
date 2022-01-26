@@ -72,8 +72,8 @@ int	ft_putnbr_base(ssize_t nbr, char *base)
 		}
 		if (number == 0)
 			write(1, &base[0], 1);
-		ar_num = malloc((size + 1) * sizeof(int));
-		ar_num[size * sizeof(int)] = '\0';
+		ar_num = malloc(size + 1);
+		ar_num[size] = '\0';
 		i = size - 1;
 		while (number != 0 && i > -1)
 		{
