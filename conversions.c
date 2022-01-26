@@ -25,16 +25,16 @@ int	toPointer(char *ptr)
 }
 
 
-///*
+/*
 int main(void)
 {
 	size_t	count;
 
 
 	char	*ptr;
-	ptr = "hello";
+	ptr = NULL;
 	printf("\n%d\n", toPointer(ptr));
 	count = printf("%p", ptr);
 	printf("\n%zu\n", count);
 }
-//*/
+*/

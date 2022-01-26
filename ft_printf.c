@@ -50,15 +50,14 @@ int	convert(const char *str, va_list pargs)
 	int		count;
 	char	*ptr;
 
-	count = 0;
 	if (*(str + 1) == 'c')
 		count = toChar(pargs);
-	/*
 	ptr = va_arg(pargs, char*);
+	if (*(str + 1) == 'p')
+		count = toPointer(ptr);
+	/*
 	if (*(str + 1) == 's')
 		toString(ptr);
-	if (*(str + 1) == 'p')
-		toPointer();
 	if (*(str + 1) == 'd')
 		toDecimal();
 	if (*(str + 1) == 'i')
@@ -79,7 +78,9 @@ int	main(void)
 {
 	int count;
 
-	count = ft_printf("hello%c\n", 'b');
+	char	*ptr;
+	ptr = NULL;
+	count = ft_printf("%p\n", ptr);
 
 	printf("%d\n", count);
 }
