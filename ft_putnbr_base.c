@@ -71,7 +71,10 @@ int	ft_putnbr_base(ssize_t nbr, char *base)
 			number = nbr * (-1);
 		}
 		if (number == 0)
+		{
 			write(1, &base[0], 1);
+			return (1);
+		}
 		ar_num = malloc(size + 1);
 		ar_num[size] = '\0';
 		i = size - 1;
@@ -82,7 +85,9 @@ int	ft_putnbr_base(ssize_t nbr, char *base)
 			--i;
 		}
 		ft_putstr(&ar_num[i + 1]);
-		return (ft_strlen(&ar_num[i + 1]));
+		size = ft_strlen(&ar_num[i + 1]);
+		free(ar_num);
+		return (size);
 	}
 	return (0);
 }
