@@ -10,14 +10,17 @@ OBJS		= $(SRCS:.c=.o)
 
 NAME		= libftprintf.a
 
+libft.a		:
+				git submodule update --init --recursive
+				$(MAKE) -C libft libft.a
+				cp libft/libft.a .
+				cp libft/libft.h .
+
+
 $(NAME)		: all libft.a
 				ar rcs $(NAME) $(OBJS) $(OBJS_bonus)
 				ranlib $(NAME)
 
-libft.a		:
-				$(MAKE) -C libft libft.a
-				cp libft/libft.a .
-				cp libft/libft.h .
 
 all			: $(OBJS)
 
