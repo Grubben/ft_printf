@@ -33,6 +33,15 @@ int toString(char *ptr)
 	return (len);
 }
 
+int	toDecimal(int *ptr)
+{
+	int	count;
+
+	count = num_len(*ptr);
+	ft_putnbr_fd(*ptr, 1);
+	return (count);
+}
+
 ///*
 int main(void)
 {
@@ -45,9 +54,12 @@ int main(void)
 	printf("\n%d\n", toPointer(ptr));
 	count = printf("%p", ptr);
 	printf("\n%zu\n", count);
-	*/
 	char	*ptr = "\n";
 	count = toString(ptr);
 	printf("%zu\n", count); 
+	*/
+	int	n = 0123;
+	count = toDecimal(&n);
+	printf("\n%zu\n", count);
 }
 //*/

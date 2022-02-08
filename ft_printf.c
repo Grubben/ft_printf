@@ -52,14 +52,13 @@ int	convert(const char *str, va_list pargs)
 
 	if (*(str + 1) == 'c')
 		count = toChar(pargs);
-	ptr = va_arg(pargs, char*);
 	if (*(str + 1) == 'p')
-		count = toPointer(ptr);
-	/*
+		count = toPointer(va_arg(pargs, char*));
 	if (*(str + 1) == 's')
-		toString(ptr);
+		count = toString(va_arg(pargs, char*));
 	if (*(str + 1) == 'd')
-		toDecimal();
+		count = toDecimal(va_arg(pargs, int);
+	/*
 	if (*(str + 1) == 'i')
 		toInteger();
 	if (*(str + 1) == 'u')
