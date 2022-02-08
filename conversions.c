@@ -42,6 +42,15 @@ int	toDecimal(int *ptr)
 	return (count);
 }
 
+int	toUdecimal(unsigned int *ptr)
+{
+	int	count;
+
+	count = num_len(*ptr);
+	ft_putnbr_fd(*ptr, 1);
+	return (count);
+}
+
 ///*
 int main(void)
 {
@@ -57,9 +66,13 @@ int main(void)
 	char	*ptr = "\n";
 	count = toString(ptr);
 	printf("%zu\n", count); 
-	*/
 	int	n = 0123;
 	count = toDecimal(&n);
+	printf("\n%zu\n", count);
+	*/
+	unsigned int n = 2147483648;
+	printf("%u\n", n);
+	count = toUdecimal(&n);
 	printf("\n%zu\n", count);
 }
 //*/

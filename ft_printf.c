@@ -58,9 +58,9 @@ int	convert(const char *str, va_list pargs)
 		count = toString(va_arg(pargs, char*));
 	if (*(str + 1) == 'd')
 		count = toDecimal(va_arg(pargs, int);
-	/*
 	if (*(str + 1) == 'i')
-		toInteger();
+		count = toDecimal(va_arg(pargs, int);
+	/*
 	if (*(str + 1) == 'u')
 		toUdecimal();
 	if (*(str + 1) == 'x')
