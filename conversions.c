@@ -24,17 +24,30 @@ int	toPointer(char *ptr)
 	return (count);
 }
 
+int toString(char *ptr)
+{
+	size_t	len;
+	
+	len = ft_strlen(ptr);
+	write(1, ptr, len);
+	return (len);
+}
 
-/*
+///*
 int main(void)
 {
 	size_t	count;
 
 
+	/*
 	char	*ptr;
 	ptr = NULL;
 	printf("\n%d\n", toPointer(ptr));
 	count = printf("%p", ptr);
 	printf("\n%zu\n", count);
+	*/
+	char	*ptr = "\n";
+	count = toString(ptr);
+	printf("%zu\n", count); 
 }
-*/
+//*/
