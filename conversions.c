@@ -42,23 +42,11 @@ int	toDecimal(int *ptr)
 	return (count);
 }
 
-void	ft_putunbr_fd(unsigned int n, int fd)
-{
-	if (n > 9)
-	{
-		ft_putnbr_fd(n / 10, fd);
-		ft_putchar_fd((n % 10) + '0', fd);
-	}
-	else
-		ft_putchar_fd(n + '0', fd);
-}
-
 int	toUdecimal(unsigned int *ptr)
 {
 	int	count;
 
-	count = num_len(*ptr);
-	ft_putunbr_fd(*ptr, 1);
+	count = ft_putunbr_base(*ptr, "0123456789");
 	return (count);
 }
 
@@ -81,7 +69,7 @@ int main(void)
 	count = toDecimal(&n);
 	printf("\n%zu\n", count);
 	*/
-	unsigned int n = 429496;
+	unsigned int n = 0;
 	printf("%u\n", n);
 	count = toUdecimal(&n);
 	printf("\n%zu\n", count);

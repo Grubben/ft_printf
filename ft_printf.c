@@ -57,12 +57,12 @@ int	convert(const char *str, va_list pargs)
 	if (*(str + 1) == 's')
 		count = toString(va_arg(pargs, char*));
 	if (*(str + 1) == 'd')
-		count = toDecimal(va_arg(pargs, int);
+		count = toDecimal(va_arg(pargs, int));
 	if (*(str + 1) == 'i')
-		count = toDecimal(va_arg(pargs, int);
-	/*
+		count = toDecimal(va_arg(pargs, int));
 	if (*(str + 1) == 'u')
-		toUdecimal();
+		count = toUdecimal(va_arg(pargs, int));
+	/*
 	if (*(str + 1) == 'x')
 		toLoHexadecimal();
 	if (*(str + 1) == 'X')

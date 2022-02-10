@@ -91,6 +91,41 @@ int	ft_putnbr_base(ssize_t nbr, char *base)
 	}
 	return (0);
 }
+
+int	ft_putunbr_base(size_t nbr, char *base)
+/* Variant of ft_putunbr_base for unsigned numbers
+*/
+{
+	size_t			number;
+	char			*ar_num;
+	size_t			size;
+	int				i;
+
+	if (base_check(base) == 1)
+	{
+		number = nbr;
+		size = num_len(number);
+		if (number == 0)
+		{
+			write(1, &base[0], 1);
+			return (1);
+		}
+		ar_num = malloc(size + 1);
+		ar_num[size] = '\0';
+		i = size - 1;
+		while (number != 0 && i > -1)
+		{
+			ar_num[i] = base[number % ft_strlen(base)];
+			number = number / ft_strlen(base);
+			--i;
+		}
+		ft_putstr(&ar_num[i + 1]);
+		size = ft_strlen(&ar_num[i + 1]);
+		free(ar_num);
+		return (size);
+	}
+	return (0);
+}
 /*
 #include <stdio.h>
 int main()
