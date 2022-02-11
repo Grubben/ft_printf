@@ -4,6 +4,7 @@ CC 			= gcc
 CFLAGS		= -Wall -Wextra -Werror -D BUFFER_SIZE=1 -g
 
 
+SUBDIRS		= libft
 SRCS		= get_next_line_utils.c
 
 OBJS		= $(SRCS:.c=.o)
@@ -30,6 +31,7 @@ clean		:
 fclean		: clean
 				$(RM) *.out* $(NAME) *.gch
 				$(RM) *.a libft.h
+				$(MAKE) -C $(SUBDIRS) fclean
 
 re			: fclean $(NAME)
 
