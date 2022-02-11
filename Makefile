@@ -1,15 +1,19 @@
-RM			= rm -rf
-
 CC 			= gcc
 CFLAGS		= -Wall -Wextra -Werror -D BUFFER_SIZE=1 -g
+RM			= rm -rf
 
 
 SUBDIRS		= libft
-SRCS		= get_next_line_utils.c
 
+SRCS		= $(wildcard *.c)
 OBJS		= $(SRCS:.c=.o)
 
 NAME		= libftprintf.a
+
+$(NAME)		: libft.a all
+				mv libft.a $(NAME)
+				ar rcs $(NAME) $(OBJS)
+				ranlib $(NAME)
 
 libft.a		:
 				git submodule update --init --recursive
@@ -17,10 +21,6 @@ libft.a		:
 				cp libft/libft.a .
 				cp libft/libft.h .
 
-
-$(NAME)		: all libft.a
-				ar rcs $(NAME) $(OBJS) $(OBJS_bonus)
-				ranlib $(NAME)
 
 
 all			: $(OBJS)

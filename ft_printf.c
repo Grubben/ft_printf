@@ -68,7 +68,7 @@ int	convert(const char *str, va_list pargs)
 	return (count);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	int count;
 
@@ -78,3 +78,4 @@ int	main(void)
 
 	printf("\n%d\n", count);
 }
+*/
