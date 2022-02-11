@@ -22,37 +22,32 @@ int	base_check(char *base)
 	return (1);
 }
 
-int	simplePutNbrBase(size_t nbr, char *base)
+void	simplePutUnbrBase(size_t nbr, char *base)
 {
-	static int count = 0;
 	if (!base_check(base))
-		return (0);
+		return ;
 	if (nbr >= 10)
 	{
-		simplePutNbrBase(nbr / ft_strlen(base), base);
+		simplePutUnbrBase(nbr / ft_strlen(base), base);
 	}
 	ft_putchar_fd(base[nbr % ft_strlen(base)], 1);
-	count++;
-	return (count);
+	return ;
 }
 
-int	simplePutUnbrBase(ssize_t unbr, char *base)
+void	simplePutNbrBase(ssize_t nbr, char *base)
 {
-	if (unbr < 0)
+	if (nbr < 0)
 	{
 		ft_putchar_fd('-', 1);
-		return (1 + simplePutNbrBase(-unbr, base));
+		return (simplePutUnbrBase(-nbr, base));
 	}
-	return simplePutNbrBase(unbr, base);
+	return simplePutUnbrBase(nbr, base);
 
 }
 
 int	main(void)
 {
-	int	count;
-
-	count = simplePutNbrBase(890, "0123456789abcdef");
-	printf("\n%d\n", count);
-	count = simplePutUnbrBase(-890, "0123456789abcdef");
-	printf("\n%d\n", count);
+	simplePutUnbrBase(890, "0123456789abcdef");
+	printf("\n");
+	simplePutNbrBase(-890, "0123456789abcdef");
 }
