@@ -50,6 +50,14 @@ int	toUdecimal(unsigned int *ptr)
 	return (count);
 }
 
+int	toLoHexadecimal(unsigned int *ptr)
+{
+	int	count;
+
+	count = ft_putunbr_base(*ptr, "0123456789abcdef");
+	return (count);
+}
+
 ///*
 int main(void)
 {
@@ -61,17 +69,18 @@ int main(void)
 	ptr = NULL;
 	printf("\n%d\n", toPointer(ptr));
 	count = printf("%p", ptr);
-	printf("\n%zu\n", count);
 	char	*ptr = "\n";
 	count = toString(ptr);
-	printf("%zu\n", count); 
 	int	n = 0123;
 	count = toDecimal(&n);
-	printf("\n%zu\n", count);
-	*/
 	unsigned int n = 0;
 	printf("%u\n", n);
 	count = toUdecimal(&n);
+	*/
+	unsigned int	n = 42949672;
+	count = toLoHexadecimal(&n);
+	printf("\n%x", n); 
+	
 	printf("\n%zu\n", count);
 }
 //*/

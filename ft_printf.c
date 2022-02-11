@@ -79,7 +79,7 @@ int	main(void)
 
 	char	*ptr;
 	ptr = NULL;
-	count = ft_printf("%p\n", ptr);
+	count = ft_printf("%x\n", 256);
 
 	printf("%d\n", count);
 }
