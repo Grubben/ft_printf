@@ -48,12 +48,11 @@ int	is_replace(const char *str)
 int	convert(const char *str, va_list pargs)
 {
 	int		count;
-	char	*ptr;
 
 	if (*(str + 1) == 'c')
-		count = toChar(va_arg(pargs, char));
+		count = toChar(va_arg(pargs, unsigned int));
 	if (*(str + 1) == 'p')
-		count = toPointer(va_arg(pargs, char*));
+		count = toPointer(va_arg(pargs, void*));
 	if (*(str + 1) == 's')
 		count = toString(va_arg(pargs, char*));
 	if (*(str + 1) == 'd')
@@ -61,11 +60,11 @@ int	convert(const char *str, va_list pargs)
 	if (*(str + 1) == 'i')
 		count = toDecimal(va_arg(pargs, int));
 	if (*(str + 1) == 'u')
-		count = toUdecimal(va_arg(pargs, int));
+		count = toUdecimal(va_arg(pargs, unsigned int));
 	if (*(str + 1) == 'x')
-		count = toLoHexadecimal(va_arg(pargs, int));
+		count = toLoHexadecimal(va_arg(pargs, unsigned int));
 	if (*(str + 1) == 'X')
-		count = toUpHexadecimal(va_arg(pargs, int));
+		count = toUpHexadecimal(va_arg(pargs, unsigned int));
 	if (*(str + 1) == '%')
 		toPercent();
 	return (count);
@@ -75,9 +74,9 @@ int	main(void)
 {
 	int count;
 
-	char	*ptr;
-	ptr = NULL;
-	count = ft_printf("%x\n", 256);
+	char	*string = "%c%p%s%d%i%u%x%X%%";
+	count = ft_printf(string, ']', NULL, "hello", 256, -894, 65536, 123, 456);
+	printf("\n%c%p%s%d%i%u%x%X%%", ']', NULL, "hello", 256, -894, 65536, 123, 456); 
 
-	printf("%d\n", count);
+	printf("\n%d\n", count);
 }

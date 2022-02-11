@@ -9,7 +9,7 @@ int	toChar(char c)
 	return (1);
 }
 
-int	toPointer(char *ptr)
+int	toPointer(void *ptr)
 {
 	//int		new;
 	int		count;
@@ -29,36 +29,36 @@ int toString(char *ptr)
 	return (len);
 }
 
-int	toDecimal(int *ptr)
+int	toDecimal(int n)
 {
 	int	count;
 
-	count = num_len(*ptr);
-	ft_putnbr_fd(*ptr, 1);
+	count = num_len(n);
+	ft_putnbr_fd(n, 1);
 	return (count);
 }
 
-int	toUdecimal(unsigned int *ptr)
+int	toUdecimal(unsigned int n)
 {
 	int	count;
 
-	count = ft_putunbr_base(*ptr, "0123456789");
+	count = ft_putunbr_base(n, "0123456789");
 	return (count);
 }
 
-int	toLoHexadecimal(unsigned int *ptr)
+int	toLoHexadecimal(unsigned int n)
 {
 	int	count;
 
-	count = ft_putunbr_base(*ptr, "0123456789abcdef");
+	count = ft_putunbr_base(n, "0123456789abcdef");
 	return (count);
 }
 
-int	toUpHexadecimal(unsigned int *ptr)
+int	toUpHexadecimal(unsigned int n)
 {
 	int	count;
 
-	count = ft_putunbr_base(*ptr, "0123456789ABCDEF");
+	count = ft_putunbr_base(n, "0123456789ABCDEF");
 	return (count);
 }
 
@@ -68,13 +68,12 @@ int	toPercent(void)
 	return (1);
 }
 
-///*
+/*
 int main(void)
 {
 	size_t	count;
 
 
-	/*
 	char	*ptr;
 	ptr = NULL;
 	printf("\n%d\n", toPointer(ptr));
@@ -92,10 +91,9 @@ int main(void)
 	unsigned int	n = 42949672;
 	count = toUpHexadecimal(&n);
 	printf("\n%X", n); 
-	*/
 	count = toPercent();
 	printf("\n%%");
 	
 	printf("\n%zu\n", count);
 }
-//*/
+*/
