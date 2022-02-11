@@ -66,7 +66,7 @@ int	convert(const char *str, va_list pargs)
 	if (*(str + 1) == 'X')
 		count = toUpHexadecimal(va_arg(pargs, unsigned int));
 	if (*(str + 1) == '%')
-		toPercent();
+		count = toPercent();
 	return (count);
 }
 

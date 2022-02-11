@@ -34,7 +34,10 @@ int	toDecimal(int n)
 	int	count;
 
 	count = num_len(n);
-	ft_putnbr_fd(n, 1);
+	if (n < 0)
+		count = 1 + num_len(-n);
+	//ft_putnbr_fd(n, 1);
+	count = ft_putnbr_base(n, "0123456789");
 	return (count);
 }
 
@@ -42,7 +45,7 @@ int	toUdecimal(unsigned int n)
 {
 	int	count;
 
-	count = ft_putunbr_base(n, "0123456789");
+	count = ft_putnbr_base(n, "0123456789");
 	return (count);
 }
 
