@@ -1,6 +1,4 @@
-#include "libft.h"
-#include "ft_putnbr_base.c"
-#include <unistd.h>
+#include "ft_printf.h"
 
 int	toChar(char c)
 {

@@ -1,6 +1,4 @@
-#include "libft.h"
-#include "conversions.c"
-#include <stdarg.h>
+#include "ft_printf.h"
 
 int	is_replace(const char *str);
 int	convert(const char *str, va_list pargs);
