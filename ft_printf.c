@@ -51,7 +51,7 @@ int	convert(const char *str, va_list pargs)
 	char	*ptr;
 
 	if (*(str + 1) == 'c')
-		count = toChar(pargs);
+		count = toChar(va_arg(pargs, char));
 	if (*(str + 1) == 'p')
 		count = toPointer(va_arg(pargs, char*));
 	if (*(str + 1) == 's')

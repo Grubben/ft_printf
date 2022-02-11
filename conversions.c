@@ -3,13 +3,9 @@
 #include <stdarg.h>
 #include <unistd.h>
 
-int	toChar(va_list pargs)
+int	toChar(char c)
 {
-	char c;
-
-	c = va_arg(pargs, int);
 	ft_putchar_fd(c, 1);
-	//write(1, &c, 1);
 	return (1);
 }
 
