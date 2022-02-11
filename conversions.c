@@ -8,19 +8,23 @@ int	toChar(char c)
 
 int	toPointer(void *ptr)
 {
-	//int		new;
 	int		count;
 
 	ft_putstr_fd("0x", 1);
 	count = 2;
-	count += ft_putnbr_base((size_t)ptr, "0123456789abcdef");
+	count += ft_putunbr_base((size_t)ptr, "0123456789abcdef");
 	return (count);
 }
 
 int toString(char *ptr)
 {
 	size_t	len;
-	
+
+	if (!ptr)
+	{
+		ft_putstr_fd("(null)", 1);
+		return (6);
+	}
 	len = ft_strlen(ptr);
 	write(1, ptr, len);
 	return (len);
@@ -71,12 +75,11 @@ int main(void)
 {
 	size_t	count;
 
-
 	char	*ptr;
 	ptr = NULL;
 	printf("\n%d\n", toPointer(ptr));
 	count = printf("%p", ptr);
-	char	*ptr = "\n";
+	char	*ptr = "1";
 	count = toString(ptr);
 	int	n = 0123;
 	count = toDecimal(&n);
@@ -91,7 +94,6 @@ int main(void)
 	printf("\n%X", n); 
 	count = toPercent();
 	printf("\n%%");
-	
 	printf("\n%zu\n", count);
 }
 */

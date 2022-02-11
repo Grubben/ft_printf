@@ -14,8 +14,8 @@ int	ft_printf(const char *format, ...)
 	{
 		if (is_replace(format))
 		{
-			count += convert(format, pargs);
 			format++;
+			count += convert(format, pargs);
 		}
 		else
 		{
@@ -47,23 +47,23 @@ int	convert(const char *str, va_list pargs)
 {
 	int		count;
 
-	if (*(str + 1) == 'c')
+	if (*str == 'c')
 		count = toChar(va_arg(pargs, unsigned int));
-	if (*(str + 1) == 'p')
+	if (*str == 'p')
 		count = toPointer(va_arg(pargs, void*));
-	if (*(str + 1) == 's')
+	if (*str == 's')
 		count = toString(va_arg(pargs, char*));
-	if (*(str + 1) == 'd')
+	if (*str == 'd')
 		count = toDecimal(va_arg(pargs, int));
-	if (*(str + 1) == 'i')
+	if (*str == 'i')
 		count = toDecimal(va_arg(pargs, int));
-	if (*(str + 1) == 'u')
+	if (*str == 'u')
 		count = toUdecimal(va_arg(pargs, unsigned int));
-	if (*(str + 1) == 'x')
+	if (*str == 'x')
 		count = toLoHexadecimal(va_arg(pargs, unsigned int));
-	if (*(str + 1) == 'X')
+	if (*str == 'X')
 		count = toUpHexadecimal(va_arg(pargs, unsigned int));
-	if (*(str + 1) == '%')
+	if (*str == '%')
 		count = toPercent();
 	return (count);
 }

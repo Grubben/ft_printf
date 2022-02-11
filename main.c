@@ -1,11 +1,13 @@
-#include "libft.h"
+#include "ft_printf.h"
 
 int main (void)
 {
-	int count;
+	int	count;
 
-	count = printf("Hey%d\n", 254);
-	printf("%d\n", count);
+	count = ft_printf(" NULL %s NULL ", NULL);
+	printf("\n%d\n", count);
+	count = printf(" NULL %s NULL ", NULL);
+	printf("\n%d\n", count);
 	
 
 	return (0);
