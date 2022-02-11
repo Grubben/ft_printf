@@ -36,17 +36,19 @@ int	base_check(char *base)
 	return (1);
 }
 
-size_t	num_len(size_t unbr)
+size_t	num_len(ssize_t nbr)
 {
 	size_t	count;
 	
-	if (unbr < 10)
+	if (nbr >= 0 && nbr < 10)
 		return (1);
 	count = 0;
-	while (unbr != 0)
+	if (nbr < 0)
+		count = 1;
+	while (nbr != 0)
 	{
 		count++;
-		unbr = unbr / 10;
+		nbr = nbr / 10;
 	}
 	return (count);
 }
@@ -130,7 +132,8 @@ int	ft_putunbr_base(size_t nbr, char *base)
 #include <stdio.h>
 int main()
 {
-	ft_putnbr_base(0, "0123456789");
+	//ft_putnbr_base(0, "0123456789");
+	printf("%zu\n", num_len(-4294967296));
 	return 0;
 }
 */
