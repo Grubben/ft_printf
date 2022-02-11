@@ -62,14 +62,12 @@ int	convert(const char *str, va_list pargs)
 		count = toDecimal(va_arg(pargs, int));
 	if (*(str + 1) == 'u')
 		count = toUdecimal(va_arg(pargs, int));
-	/*
 	if (*(str + 1) == 'x')
-		toLoHexadecimal();
+		count = toLoHexadecimal(va_arg(pargs, int));
 	if (*(str + 1) == 'X')
-		toUpHexadecimal();
+		count = toUpHexadecimal(va_arg(pargs, int));
 	if (*(str + 1) == '%')
 		toPercent();
-	*/
 	return (count);
 }
 

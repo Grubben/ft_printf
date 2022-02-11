@@ -58,6 +58,20 @@ int	toLoHexadecimal(unsigned int *ptr)
 	return (count);
 }
 
+int	toUpHexadecimal(unsigned int *ptr)
+{
+	int	count;
+
+	count = ft_putunbr_base(*ptr, "0123456789ABCDEF");
+	return (count);
+}
+
+int	toPercent(void)
+{
+	ft_putchar_fd('%', 1);
+	return (1);
+}
+
 ///*
 int main(void)
 {
@@ -76,10 +90,15 @@ int main(void)
 	unsigned int n = 0;
 	printf("%u\n", n);
 	count = toUdecimal(&n);
-	*/
 	unsigned int	n = 42949672;
 	count = toLoHexadecimal(&n);
 	printf("\n%x", n); 
+	unsigned int	n = 42949672;
+	count = toUpHexadecimal(&n);
+	printf("\n%X", n); 
+	*/
+	count = toPercent();
+	printf("\n%%");
 	
 	printf("\n%zu\n", count);
 }
