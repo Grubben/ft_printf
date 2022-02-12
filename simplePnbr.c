@@ -1,32 +1,13 @@
-#include <unistd.h>
-#include "libft.h"
-
-int	base_check(char *base)
-{
-	if (ft_strlen(base) < 2)
-	{
-		return (0);
-	}
-	while (*base != '\0')
-	{
-		if (*base == '+' || *base == '-')
-		{
-			return (0);
-		}
-		if (ft_charinside(*base, base + 1))
-		{
-			return (0);
-		}
-		++base;
-	}
-	return (1);
-}
+#include "ft_printf.h"
 
 void	simplePutUnbrBase(size_t nbr, char *base)
 {
+	size_t	count;
+
+	count = 0;
 	if (!base_check(base))
 		return ;
-	if (nbr >= 10)
+	if (nbr >= ft_strlen(base))
 	{
 		simplePutUnbrBase(nbr / ft_strlen(base), base);
 	}
@@ -45,9 +26,11 @@ void	simplePutNbrBase(ssize_t nbr, char *base)
 
 }
 
+/*
 int	main(void)
 {
 	simplePutUnbrBase(890, "0123456789abcdef");
 	printf("\n");
 	simplePutNbrBase(-890, "0123456789abcdef");
 }
+*/
