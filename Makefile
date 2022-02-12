@@ -1,11 +1,11 @@
 CC 			= gcc
-CFLAGS		= -Wall -Wextra -Werror -D BUFFER_SIZE=1 -g
+CFLAGS		= -g3 -Wall -Wextra -Werror -D BUFFER_SIZE=1 
 RM			= rm -rf
 
 
 SUBDIRS		= libft
 
-SRCS		= $(wildcard *.c)
+SRCS		= $(wildcard [^m]?*.c)
 OBJS		= $(SRCS:.c=.o)
 
 NAME		= libftprintf.a
