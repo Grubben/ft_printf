@@ -24,11 +24,17 @@ int	toPercent(void);
 
 int	base_check(char *base);
 
+size_t	unum_len(size_t nbr);
+
 size_t	num_len(ssize_t nbr);
+
+
 
 int	ft_putnbr_base(ssize_t nbr, char *base);
 
 int	ft_putunbr_base(size_t nbr, char *base);
+
+size_t	simplePutUnbrBase(size_t nbr, char *base);
 
 #endif
 

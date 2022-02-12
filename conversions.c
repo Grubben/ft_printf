@@ -12,7 +12,8 @@ int	toPointer(void *ptr)
 
 	ft_putstr_fd("0x", 1);
 	count = 2;
-	count += ft_putunbr_base((size_t)ptr, "0123456789abcdef");
+	count += simplePutUnbrBase((size_t)ptr, "0123456789abcdef");
+	//count += unum_len((size_t)ptr);
 	return (count);
 }
 
