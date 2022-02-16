@@ -3,12 +3,12 @@
 int main (void)
 {
 	int	count = 0;
-	void	*p1 = (void *)ULONG_MAX;
-	void	*p2 =  (void *)(-ULONG_MAX);
+	//void	*p1 = (void *)ULONG_MAX;
+	//void	*p2 =  (void *)(-ULONG_MAX);
 
-	count = ft_printf("%p %p", p1, p2);
+	count = ft_printf("%u", -1);
 	printf("\n%d\n", count);
-	count = printf("%p %p", p1, p2);
+	count = printf("%u", -1);
 	printf("\n%d\n", count);
 	
 

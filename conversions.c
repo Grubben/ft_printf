@@ -45,7 +45,7 @@ int	toUdecimal(unsigned int n)
 	int	count;
 
 	count = num_len(n);
-	ft_putnbr_fd(n, 1);
+	simplePutUnbrBase(n, "0123456789");
 	return (count);
 }
 
