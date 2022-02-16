@@ -6,11 +6,12 @@
 /*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 14:02:24 by amaria-d          #+#    #+#             */
-/*   Updated: 2022/02/16 14:02:25 by amaria-d         ###   ########.fr       */
+/*   Updated: 2022/02/16 14:09:17 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
 int	base_check(char *base)
 {
 	if (ft_strlen(base) < 2)
@@ -35,7 +36,7 @@ int	base_check(char *base)
 size_t	num_len(ssize_t nbr)
 {
 	size_t	count;
-	
+
 	if (nbr >= 0 && nbr < 10)
 		return (1);
 	count = 0;
