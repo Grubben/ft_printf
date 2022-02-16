@@ -1,40 +1,49 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/16 13:46:47 by amaria-d          #+#    #+#             */
+/*   Updated: 2022/02/16 13:47:38 by amaria-d         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 # include <stdarg.h>
 # include <unistd.h>
 # include "libft.h"
 
-int	ft_printf(const char *format, ...);
+int		ft_printf(const char *format, ...);
 
-int	toChar(char c);
+int		toChar(char c);
 
-int	toPointer(void *ptr);
+int		toPointer(void *ptr);
 
-int toString(char *ptr);
+int		toString(char *ptr);
 
-int	toDecimal(int n);
+int		toDecimal(int n);
 
-int	toUdecimal(unsigned int n);
+int		toUdecimal(unsigned int n);
 
-int	toLoHexadecimal(unsigned int n);
+int		toLoHexadecimal(unsigned int n);
 
-int	toUpHexadecimal(unsigned int n);
+int		toUpHexadecimal(unsigned int n);
 
-int	toPercent(void);
+int		toPercent(void);
 
-int	base_check(char *base);
+int		base_check(char *base);
 
 size_t	unum_len(size_t nbr);
 
 size_t	num_len(ssize_t nbr);
 
+int		ft_putnbr_base(ssize_t nbr, char *base);
 
-
-int	ft_putnbr_base(ssize_t nbr, char *base);
-
-int	ft_putunbr_base(size_t nbr, char *base);
+int		ft_putunbr_base(size_t nbr, char *base);
 
 size_t	simple_putunbr_base(size_t nbr, char *base);
 
 #endif
-

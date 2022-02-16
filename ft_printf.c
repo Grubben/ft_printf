@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/16 13:48:45 by amaria-d          #+#    #+#             */
+/*   Updated: 2022/02/16 13:48:45 by amaria-d         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 int	is_replace(const char *str);
@@ -5,7 +17,7 @@ int	convert(const char *str, va_list pargs);
 
 int	ft_printf(const char *format, ...)
 {
-	va_list pargs;
+	va_list	pargs;
 	int		count;
 
 	va_start(pargs, format);
@@ -28,12 +40,11 @@ int	ft_printf(const char *format, ...)
 	return (count);
 }
 
-
 int	is_replace(const char *str)
 {
 	if (*str == '%')
 	{
-		if (ft_charinside(*(str+1), "cspdiuxX%"))
+		if (ft_charinside(*(str + 1), "cspdiuxX%"))
 		{
 			return (1);
 		}
@@ -50,9 +61,9 @@ int	convert(const char *str, va_list pargs)
 	if (*str == 'c')
 		count = toChar(va_arg(pargs, unsigned int));
 	if (*str == 'p')
-		count = toPointer(va_arg(pargs, void*));
+		count = toPointer(va_arg(pargs, void *));
 	if (*str == 's')
-		count = toString(va_arg(pargs, char*));
+		count = toString(va_arg(pargs, char *));
 	if (*str == 'd')
 		count = toDecimal(va_arg(pargs, int));
 	if (*str == 'i')
