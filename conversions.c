@@ -12,7 +12,7 @@ int	toPointer(void *ptr)
 
 	ft_putstr_fd("0x", 1);
 	count = 2;
-	count += simplePutUnbrBase((size_t)ptr, "0123456789abcdef");
+	count += simple_putunbr_base((size_t)ptr, "0123456789abcdef");
 	//count += unum_len((size_t)ptr);
 	return (count);
 }
@@ -45,7 +45,7 @@ int	toUdecimal(unsigned int n)
 	int	count;
 
 	count = num_len(n);
-	simplePutUnbrBase(n, "0123456789");
+	simple_putunbr_base(n, "0123456789");
 	return (count);
 }
 
@@ -53,7 +53,7 @@ int	toLoHexadecimal(unsigned int n)
 {
 	int	count;
 
-	count = ft_putunbr_base(n, "0123456789abcdef");
+	count = simple_putunbr_base(n, "0123456789abcdef");
 	return (count);
 }
 
@@ -61,7 +61,7 @@ int	toUpHexadecimal(unsigned int n)
 {
 	int	count;
 
-	count = ft_putunbr_base(n, "0123456789ABCDEF");
+	count = simple_putunbr_base(n, "0123456789ABCDEF");
 	return (count);
 }
 

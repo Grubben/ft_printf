@@ -34,7 +34,7 @@ int	ft_putnbr_base(ssize_t nbr, char *base);
 
 int	ft_putunbr_base(size_t nbr, char *base);
 
-size_t	simplePutUnbrBase(size_t nbr, char *base);
+size_t	simple_putunbr_base(size_t nbr, char *base);
 
 #endif
 
