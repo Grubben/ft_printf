@@ -1,23 +1,34 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   conversions.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/16 13:50:10 by amaria-d          #+#    #+#             */
+/*   Updated: 2022/02/16 13:50:36 by amaria-d         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-int	toChar(char c)
+int	to_char(char c)
 {
 	ft_putchar_fd(c, 1);
 	return (1);
 }
 
-int	toPointer(void *ptr)
+int	to_pointer(void *ptr)
 {
 	int		count;
 
 	ft_putstr_fd("0x", 1);
 	count = 2;
 	count += simple_putunbr_base((size_t)ptr, "0123456789abcdef");
-	//count += unum_len((size_t)ptr);
 	return (count);
 }
 
-int toString(char *ptr)
+int	to_string(char *ptr)
 {
 	size_t	len;
 
@@ -31,7 +42,7 @@ int toString(char *ptr)
 	return (len);
 }
 
-int	toDecimal(int n)
+int	to_decimal(int n)
 {
 	int	count;
 
@@ -40,7 +51,7 @@ int	toDecimal(int n)
 	return (count);
 }
 
-int	toUdecimal(unsigned int n)
+int	to_udecimal(unsigned int n)
 {
 	int	count;
 
@@ -49,7 +60,7 @@ int	toUdecimal(unsigned int n)
 	return (count);
 }
 
-int	toLoHexadecimal(unsigned int n)
+int	to_lohexadecimal(unsigned int n)
 {
 	int	count;
 
@@ -57,7 +68,7 @@ int	toLoHexadecimal(unsigned int n)
 	return (count);
 }
 
-int	toUpHexadecimal(unsigned int n)
+int	to_uphexadecimal(unsigned int n)
 {
 	int	count;
 
@@ -65,7 +76,7 @@ int	toUpHexadecimal(unsigned int n)
 	return (count);
 }
 
-int	toPercent(void)
+int	to_percent(void)
 {
 	ft_putchar_fd('%', 1);
 	return (1);
