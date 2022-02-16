@@ -6,7 +6,7 @@
 /*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 13:46:47 by amaria-d          #+#    #+#             */
-/*   Updated: 2022/02/16 13:56:38 by amaria-d         ###   ########.fr       */
+/*   Updated: 2022/02/16 14:05:04 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,6 @@ int		to_uphexadecimal(unsigned int n);
 int		to_percent(void);
 
 int		base_check(char *base);
-
-size_t	unum_len(size_t nbr);
 
 size_t	num_len(ssize_t nbr);
 
