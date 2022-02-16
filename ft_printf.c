@@ -6,7 +6,7 @@
 /*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 13:48:45 by amaria-d          #+#    #+#             */
-/*   Updated: 2022/02/16 13:48:45 by amaria-d         ###   ########.fr       */
+/*   Updated: 2022/02/16 13:57:56 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,23 +59,23 @@ int	convert(const char *str, va_list pargs)
 	int		count;
 
 	if (*str == 'c')
-		count = toChar(va_arg(pargs, unsigned int));
+		count = to_char(va_arg(pargs, unsigned int));
 	if (*str == 'p')
-		count = toPointer(va_arg(pargs, void *));
+		count = to_pointer(va_arg(pargs, void *));
 	if (*str == 's')
-		count = toString(va_arg(pargs, char *));
+		count = to_string(va_arg(pargs, char *));
 	if (*str == 'd')
-		count = toDecimal(va_arg(pargs, int));
+		count = to_decimal(va_arg(pargs, int));
 	if (*str == 'i')
-		count = toDecimal(va_arg(pargs, int));
+		count = to_decimal(va_arg(pargs, int));
 	if (*str == 'u')
-		count = toUdecimal(va_arg(pargs, unsigned int));
+		count = to_udecimal(va_arg(pargs, unsigned int));
 	if (*str == 'x')
-		count = toLoHexadecimal(va_arg(pargs, unsigned int));
+		count = to_lohexadecimal(va_arg(pargs, unsigned int));
 	if (*str == 'X')
-		count = toUpHexadecimal(va_arg(pargs, unsigned int));
+		count = to_uphexadecimal(va_arg(pargs, unsigned int));
 	if (*str == '%')
-		count = toPercent();
+		count = to_percent();
 	return (count);
 }
 

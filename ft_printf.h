@@ -6,7 +6,7 @@
 /*   By: amaria-d <amaria-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 13:46:47 by amaria-d          #+#    #+#             */
-/*   Updated: 2022/02/16 13:47:38 by amaria-d         ###   ########.fr       */
+/*   Updated: 2022/02/16 13:56:38 by amaria-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,21 +18,21 @@
 
 int		ft_printf(const char *format, ...);
 
-int		toChar(char c);
+int		to_char(char c);
 
-int		toPointer(void *ptr);
+int		to_pointer(void *ptr);
 
-int		toString(char *ptr);
+int		to_string(char *ptr);
 
-int		toDecimal(int n);
+int		to_decimal(int n);
 
-int		toUdecimal(unsigned int n);
+int		to_udecimal(unsigned int n);
 
-int		toLoHexadecimal(unsigned int n);
+int		to_lohexadecimal(unsigned int n);
 
-int		toUpHexadecimal(unsigned int n);
+int		to_uphexadecimal(unsigned int n);
 
-int		toPercent(void);
+int		to_percent(void);
 
 int		base_check(char *base);
 
