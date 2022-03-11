@@ -16,12 +16,9 @@ $(NAME)		: libft.a all
 				ranlib $(NAME)
 
 libft.a		:
-				git submodule update --init --recursive
 				$(MAKE) -C libft libft.a
 				cp libft/libft.a .
 				cp libft/libft.h .
-
-
 
 all			: $(OBJS)
 
