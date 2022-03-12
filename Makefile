@@ -5,7 +5,9 @@ RM			= rm -rf
 
 SUBDIRS		= libft
 
-SRCS		= $(wildcard [^m]?*.c)
+#SRCS		= $(wildcard *.c)
+SRCS		= conversions1.c conversions2.c ft_printf.c simplePnbr.c utils.c
+
 OBJS		= $(SRCS:.c=.o)
 
 NAME		= libftprintf.a
